@@ -158,9 +158,9 @@ def draw_skater(skater):
     else: 
         screen.blit(SKATER_PNG_LEFT, (ice_skater.pos[0] - ice_skater.width, ice_skater.pos[1] - ice_skater.width))
 
-obstacle_1 = Obstacle((0, 500),(550, 500),(550, 700),(0, 700))
-obstacle_0 = Obstacle((650, 200), (850, 200), (850, 400), (650, 400)) 
-obstacle_2 = Obstacle((800, 650), (1500, 650), (1500, 800), (800, 800))
+obstacle_0 = Obstacle(700, 300, 180, 180)
+obstacle_1 = Obstacle(0, 500, 530, 130) 
+obstacle_2 = Obstacle(830, 670, 680, 130) 
 obstacles_list = []
 obstacles_list.append(obstacle_0)
 obstacles_list.append(obstacle_1)
