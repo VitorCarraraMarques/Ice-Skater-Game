@@ -104,6 +104,9 @@ class Ice_Skater:
         self.skater_rect = pygame.Rect(self.pos[0] - self.width, self.pos[1] - self.width, self.width*2, self.width*2) 
         #pygame.draw.rect(screen, blue, ice_skater_img)
 
+    def show_vel_vector(self):
+        pygame.draw.line(screen, red,self.pos, (self.pos[0] + self.vel[0]*10, self.pos[1] + self.vel[1]*10), 6)
+
 
 
 class Obstacle: 
