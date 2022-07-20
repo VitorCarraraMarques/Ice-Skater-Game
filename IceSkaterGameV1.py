@@ -101,13 +101,7 @@ class Ice_Skater:
     def show(self):    
         #ice_skater_img = pygame.image.load('@coisas\projetos python\Visual Studio Code Projects\Untitled Ice Skater Game\IceSkater.png')
         #ice_skater_img = pygame.image.load('IceSkater.png')
-        w = self.width
-        point_1 = (self.pos[0] - w, self.pos[1] - w)
-        point_2 = (self.pos[0] + w, self.pos[1] - w)
-        point_3 = (self.pos[0] + w, self.pos[1] + w)
-        point_4 = (self.pos[0] - w, self.pos[1] + w)
-
-        pygame.draw.polygon(screen, blue, [point_1, point_2, point_3, point_4])
+        self.skater_rect = pygame.Rect(self.pos[0] - self.width, self.pos[1] - self.width, self.width*2, self.width*2) 
         #pygame.draw.rect(screen, blue, ice_skater_img)
 
 
