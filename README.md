@@ -1,2 +1,2 @@
 # IceSkaterGame
-Protótipo de um jogo de uma skatista no gelo, utilizando o código de SimuladorFisicaPygame como base. 
+Protótipo de um jogo de uma skatista no gelo, baseado nas leis de Newton para simular a aceleração e as interações do jogador. 
