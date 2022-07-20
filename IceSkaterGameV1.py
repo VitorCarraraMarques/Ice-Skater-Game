@@ -113,15 +113,8 @@ class Obstacle:
         self.bigger_rect = pygame.Rect(left - self.bigger, top - self.bigger, width + 2*self.bigger, height + 2*self.bigger)
 
     def show(self): 
-        pygame.draw.polygon(screen, (50, 50, 50), [self.point_1, self.point_2, self.point_3, self.point_4])
-        upper_side = [(self.point_1), (self.point_2)]
-        right_side = [(self.point_2), (self.point_3)]
-        down_side = [(self.point_3), (self.point_4)]
-        left_side = [(self.point_4), (self.point_1)]
-        upper_line = pygame.draw.line(screen, (20, 20, 20), upper_side[0], upper_side[1], 10)
-        right_line = pygame.draw.line(screen, (20, 20, 20), right_side[0], right_side[1], 10)
-        left_line = pygame.draw.line(screen, (20, 20, 20), left_side[0], left_side[1], 10)
-        down_line = pygame.draw.line(screen, (20, 20, 20), down_side[0], down_side[1], 10)
+        pygame.draw.rect(screen, (150, 150, 200), self.bigger_rect)
+        pygame.draw.rect(screen, (40, 40, 120), self.obstacle_rect)
 
 
 
