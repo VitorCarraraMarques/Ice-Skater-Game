@@ -18,6 +18,7 @@ white = (255, 255, 255)
 red = (200, 20, 20)
 blue = (20, 20, 200)
 yellow = (150, 150, 0)
+bright_blue = (100, 100, 200)
 
 FPS = 60
 clock = pygame.time.Clock()
