@@ -55,7 +55,7 @@ class Ice_Skater:
 
         return force
 
-    def jump(self): 
+    def jump(self, obstacle): 
         if pygame.key.get_pressed()[pygame.K_UP] or pygame.key.get_pressed()[pygame.K_SPACE] == True and (
            (self.skater_rect.colliderect(obstacle) and self.skater_rect.bottom - obstacle.top < 30) or (self.pos[1] > 760)):
             self.vel[1] = -8
