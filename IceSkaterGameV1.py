@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame, sys, os
 #sys.path.append(".")
 #from ice_skater_class import Ice_Skater
 
