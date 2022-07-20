@@ -107,11 +107,10 @@ class Ice_Skater:
 
 
 class Obstacle: 
-    def __init__(self, point_1, point_2, point_3, point_4 ): 
-        self.point_1 = point_1
-        self.point_2 = point_2
-        self.point_3 = point_3
-        self.point_4 = point_4 
+    def __init__(self, left, top, width, height): 
+        self.obstacle_rect = pygame.Rect(left, top, width, height)
+        self.bigger = 20
+        self.bigger_rect = pygame.Rect(left - self.bigger, top - self.bigger, width + 2*self.bigger, height + 2*self.bigger)
 
     def show(self): 
         pygame.draw.polygon(screen, (50, 50, 50), [self.point_1, self.point_2, self.point_3, self.point_4])
