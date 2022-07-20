@@ -33,7 +33,7 @@ class Ice_Skater:
 
     def __init__(self):
         self.width = 30 
-        self.pos = [100, 470]
+        self.pos = [100, 730]
         self.vel = [0, 0]
         self.mod_vel = 50*(self.vel[0]**2 + self.vel[1]**2)
         self.acc = [0, 0]
@@ -157,7 +157,7 @@ def draw_skater(skater):
         screen.blit(SKATER_PNG_RIGHT, (ice_skater.pos[0] - ice_skater.width, ice_skater.pos[1] - ice_skater.width))
     else: 
         screen.blit(SKATER_PNG_LEFT, (ice_skater.pos[0] - ice_skater.width, ice_skater.pos[1] - ice_skater.width))
-        
+
 obstacle_1 = Obstacle((0, 500),(550, 500),(550, 700),(0, 700))
 obstacle_0 = Obstacle((650, 200), (850, 200), (850, 400), (650, 400)) 
 obstacle_2 = Obstacle((800, 650), (1500, 650), (1500, 800), (800, 800))
