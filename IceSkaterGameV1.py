@@ -118,26 +118,32 @@ class Obstacle:
 
 
 
-def collision(body, obstacle): 
-    loss = 0.2
-    #COLISÃO POR CIMA
-    if ((obstacle.point_1[0] <= body.pos[0] <= obstacle.point_2[0]) and (obstacle.point_1[1] <= body.pos[1] + body.width <= obstacle.point_1[1] + 100)):
-        #body.vel[1] = - loss*body.vel[1]
-        body.vel[1] = 0
-    #COLISÃO POR BAIXO
-    elif ((obstacle.point_1[0] <= body.pos[0] <= obstacle.point_2[0]) and (obstacle.point_3[1] - 100 <= body.pos[1] - body.width <= obstacle.point_3[1] )):
-        #body.vel[1] = - loss*body.vel[1]
-        body.vel[1] = 0
-    #COLISÃO PELA DIREITA
-    elif ((obstacle.point_2[0] - 100 <= body.pos[0] - body.width <= obstacle.point_2[0]) and (obstacle.point_2[1] <= body.pos[1] <= obstacle.point_3[1])):
-        #body.vel[0] = - loss*body.vel[0]
-        body.vel[0] = 0
-    #COLISÃO PELA ESQUERDA
-    elif ((obstacle.point_1[0] <= body.pos[0] + body.width <= obstacle.point_1[0] + 100) and (obstacle.point_2[1] <= body.pos[1] <= obstacle.point_3[1])):
-        #body.vel[0] = - loss*body.vel[0]
-        body.vel[0] = 0
-    return True
-        
+    def collision(self, body): 
+        loss = 0.5
+    
+        if body.skater_rect.colliderect(self.bigger_rect): 
+            #COLISÃO POR CIMA
+            if abs(self.bigger_rect.top - body.skater_rect.bottom) < 20 and body.vel[1] > 0 : 
+                body.vel[1] *= -loss
+                body.pos[1] = self.bigger_rect.top - 20
+            #COLISÃO POR BAIXO
+            elif abs(body.skater_rect.top - self.bigger_rect.bottom) < 20 and body.vel[1] < 0: 
+                body.vel[1] *= -loss
+                body.pos[1] = self.bigger_rect.bottom + 20
+            #COLISÃO PELA DIREITA
+            elif abs(body.skater_rect.left - self.bigger_rect.right) < 20 and body.vel[0] < 0:
+                body.vel[0] *= -loss
+                body.pos[0] = self.bigger_rect.right + 20
+            #COLISÃO PELA ESQUERDA
+            elif abs(body.skater_rect.right - self.bigger_rect.left) < 20 and body.vel[0] > 0:
+                body.vel[0] *= -loss
+                body.pos[0] = self.bigger_rect.left - 20
+
+            else: 
+                body.vel *= 1
+
+        return True
+    
 
 
 ice_skater = Ice_Skater()
