@@ -185,6 +185,8 @@ while True:
         obstacles_list[i].show()
 
     ice_skater.show()
+    draw_skater(ice_skater)
+    ice_skater.show_vel_vector()
     ice_skater.move()
     ice_skater.reset_acc()
     #ice_skater.jump()
