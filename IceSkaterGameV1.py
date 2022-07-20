@@ -204,7 +204,8 @@ while True:
     ice_skater.add_acc(acc_grav)
     
     for i in range(len(obstacles_list)): 
-        collision(ice_skater, obstacles_list[i])
+        obstacles_list[i].collision(ice_skater)
+        ice_skater.jump(obstacles_list[i].bigger_rect)
 
     ice_skater.jump()
     
