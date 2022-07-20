@@ -176,6 +176,7 @@ while True:
         if event.type == pygame.QUIT: sys.exit()
     
     screen.fill(black)
+    screen.blit(BACKGROUND, (0, 0))
 
     for i in range(len(obstacles_list)):
         obstacles_list[i].show()
