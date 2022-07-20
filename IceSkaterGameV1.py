@@ -147,7 +147,17 @@ class Obstacle:
 
 
 ice_skater = Ice_Skater()
+SKATER_PNG_RIGHT = pygame.transform.scale(pygame.image.load(os.path.join("assets", "IceSkaterSidewaysV2_semfundo.png")), (ice_skater.width*2, ice_skater.width*2))
+SKATER_PNG_LEFT = pygame.transform.scale(pygame.image.load(os.path.join("assets", "IceSkaterSidewaysV2_semfundo_LEFT.png")), (ice_skater.width*2, ice_skater.width*2))
+SKATER_PNG_LEFT_WALL = pygame.transform.scale(pygame.image.load(os.path.join("assets", "IceSkater_LEFT_WALL.png")), (ice_skater.width*2, ice_skater.width*2))
+SKATER_PNG_RIGHT_WALL = pygame.transform.scale(pygame.image.load(os.path.join("assets", "IceSkater_RIGHT_WALL.png")), (ice_skater.width*2, ice_skater.width*2))
 
+def draw_skater(skater): 
+    if skater.vel[0] >= 0: 
+        screen.blit(SKATER_PNG_RIGHT, (ice_skater.pos[0] - ice_skater.width, ice_skater.pos[1] - ice_skater.width))
+    else: 
+        screen.blit(SKATER_PNG_LEFT, (ice_skater.pos[0] - ice_skater.width, ice_skater.pos[1] - ice_skater.width))
+        
 obstacle_1 = Obstacle((0, 500),(550, 500),(550, 700),(0, 700))
 obstacle_0 = Obstacle((650, 200), (850, 200), (850, 400), (650, 400)) 
 obstacle_2 = Obstacle((800, 650), (1500, 650), (1500, 800), (800, 800))
