@@ -9,6 +9,9 @@ height = 800
 size = width, height 
 screen = pygame.display.set_mode(size)
  
+BACKGROUND = pygame.transform.scale(
+    pygame.image.load(os.path.join("assets", "Background1.png")), (width, height)
+)
 
 black = (0, 0, 0)
 white = (255, 255, 255)
