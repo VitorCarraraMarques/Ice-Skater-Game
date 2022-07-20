@@ -80,11 +80,22 @@ class Ice_Skater:
 
 
     def edges(self):
-        loss = 0.2
-        if self.pos[0] < self.width or self.pos[0] > width - self.width:
+        loss = 0.5
+        if self.pos[0] < self.width :
+            self.pos[0] = self.width
             self.vel[0] = -loss*self.vel[0]
-        if self.pos[1] < self.width  or self.pos[1] > height - (self.width):
-            self.vel[1] = -loss*self.vel[1]  
+            
+        elif self.pos[0] > width - self.width:    
+            self.pos[0] = width - self.width
+            self.vel[0] = -loss*self.vel[0]
+            
+        elif self.pos[1] < self.width:
+            self.pos[1] = self.width
+            self.vel[1] = -loss*self.vel[1]
+
+        elif self.pos[1] > height - (self.width):
+            self.pos[1] = height - (self.width)
+            self.vel[1] = -loss*self.vel[1] 
         
 
     def show(self):    
