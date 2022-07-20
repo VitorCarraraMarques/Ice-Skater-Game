@@ -38,6 +38,7 @@ class Ice_Skater:
         self.mod_vel = 50*(self.vel[0]**2 + self.vel[1]**2)
         self.acc = [0, 0]
         self.mass = 5
+        self.skater_rect = pygame.Rect(self.pos[0] - self.width, self.pos[1] - self.width, self.width*2, self.width*2)
 
     def move(self):
         self.vel = soma_vetor2D(self.vel, self.acc) 
