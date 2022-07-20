@@ -207,6 +207,4 @@ while True:
         obstacles_list[i].collision(ice_skater)
         ice_skater.jump(obstacles_list[i].bigger_rect)
 
-    ice_skater.jump()
-    
     pygame.display.flip()
